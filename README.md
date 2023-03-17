@@ -1,5 +1,10 @@
 # `vezzo`:  a small library to parse version strings from binfie tools
 
+<div align="center">
+    <a href="https://badge.fury.io/py/vezzo"><img src="https://badge.fury.io/py/vezzo.svg" alt="PyPI version" height="18"></a>
+    <a href="https://zenodo.org/badge/latestdoi/615520033"><img src="https://zenodo.org/badge/615520033.svg" alt="DOI"></a>
+    <img alt="PyPI - Python Version" src="https://img.shields.io/pypi/pyversions/vezzo">
+</div
 ## Background
 
 It is a common pattern when running binfie tools to run checks on the versions 
