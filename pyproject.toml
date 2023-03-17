@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "vezzo"
-version = "1.0.0"
+version = "1.0.1"
 description = "A small library to verify that compatible versions of dependencies are installed before your tool can run properly."
 authors = ["Anders Goncalves da Silva <andersgs@gmail.com>"]
 readme = "README.md"
