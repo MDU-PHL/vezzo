@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning].
 
 ## [Unreleased]
 
+## [1.0.0] - 2023-03-17
+
 ### Added
 
 - Regex to parse version string from a larger string, and allowing for optional path number
