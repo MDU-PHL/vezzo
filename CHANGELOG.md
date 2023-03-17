@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning].
 
 ## [Unreleased]
 
+###
+ - License file
 ## [1.0.0] - 2023-03-17
 
 ### Added

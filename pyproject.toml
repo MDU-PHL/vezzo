@@ -5,6 +5,7 @@ description = "A small library to verify that compatible versions of dependencie
 authors = ["Anders Goncalves da Silva <andersgs@gmail.com>"]
 readme = "README.md"
 packages = [{ include = "vezzo", from = "src" }]
+license = "MIT"
 
 [tool.poetry.dependencies]
 python = "^3.10"
