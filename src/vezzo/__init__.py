@@ -100,7 +100,7 @@ def get_version_string(cmd: str, version_flag: str, exit_code: int) -> str:
     in it.
     """
     cmd = [cmd, version_flag]
-    chk_output = True if exit_code == 0 else False
+    chk_output = exit_code == 0
     try:
         process = subprocess.run(
             cmd,
@@ -111,12 +111,11 @@ def get_version_string(cmd: str, version_flag: str, exit_code: int) -> str:
         )
         if len(process.stdout) > 0:
             return process.stdout
-        elif len(process.stderr) > 0:
+        if len(process.stderr) > 0:
             return process.stderr
-        else:
-            raise UnableToGenerateVersionOutputString(
-                f"Invalid output with command {' '.join(cmd)}"
-            )
+        raise UnableToGenerateVersionOutputString(
+            f"Invalid output with command {' '.join(cmd)}"
+        )
 
     except subprocess.CalledProcessError as error:
         raise error
