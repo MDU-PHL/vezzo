@@ -19,6 +19,7 @@ pylint = "^2.16.2"
 pyyaml = "^6.0"
 pytest-assume = "^2.4.3"
 build = "^0.10.0"
+twine = "^4.0.2"
 
 [build-system]
 requires = ["poetry-core"]
