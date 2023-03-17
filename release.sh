@@ -23,6 +23,7 @@ fi
 
 
 # MAKE SURE VERSION IS INCREMENTED
+poetry install
 PACKAGE="vezzo"
 VERSION="$(python -c "import importlib.metadata; print(importlib.metadata.version('$PACKAGE'))")"
 echo $VERSION
