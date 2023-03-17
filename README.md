@@ -15,7 +15,7 @@ version required. To run the comparison, we use the `semver` [library](https://p
 
 ## Usage
 The main function provided by the library is `vezzo.verify_from_config`. This 
-function takes in the path to a YAML file that specifies the version requirements:
+function takes in the path to a YAML file that specifies the version requirements and checks them against the observed versions installed in the enviroment. It expects the dependencies to be in the path. The YAML file should be a list of dictionaries, where each dictionary specifies the requirements for a single tool. The dictionary should have the following fields:
 
 ```yaml
 - name: blastn
