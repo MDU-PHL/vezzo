@@ -43,4 +43,51 @@ string is returned. The majority of cases this is 0, but `bwa`, for instance, re
 By specifying all the version requirements in a YAML config file that ships with your
 package it is easy to check dependencies and modify requirement all in one location.
 
+A full working example is provided in the `example` directory. To run the example,
+simply run `python example/example1.py`.
 
+The output from the example is (the exact output will depend on the versions you have, and any tweaks you make to the example config file):
+
+```bash
+blastn version 2.13.0 DOES NOT match requirements >=2.14.0.... ❌ 
+samtools version 1.17.0 matches requirements >=1.16.0.... ✔ 
+There was 1 tool that failed the version requirements. Please ensure these are corrected before proceeding. 😢 
+```
+
+The basic code might look like this:
+
+```python
+for is_match, obs_version, exp_version, tool in vezzo.verify_from_config(config):
+    if is_match:
+        sys.stderr.write(
+            f"\033[32m {tool} version {obs_version} matches requirements {exp_version}.... \u2714 \033[0m\n"
+        )
+    else:
+        sys.stderr.write(
+            f"\033[31m {tool} version {obs_version} DOES NOT matches requirements {exp_version}.... \u274C \033[0m\n"
+        )
+        fails += 1
+
+if fails > 0:
+    sys.stderr.write(
+        f"\033[31m There {'was' if fails == 1 else 'were'} {fails} tool{'s' if fails > 0 else ''} that failed the version requirements. Please ensure these are corrected before proceeding. \U0001F622 \033[0m\n"
+    )
+    sys.exit(1)
+```
+
+As as can be seen, the function returns a generator that yields a tuple of the following
+format: `(is_match, obs_version, exp_version, tool)`. The `is_match` field is a boolean
+that indicates whether the observed version matches the expected version criteria. 
+The `obs_version` field is the observed version string. The `exp_version` field is the
+expected string requirement in the format outlined above. The `tool` field is the name of the tool.
+
+## Installation
+
+The library can be installed via `pip`:
+
+```bash
+pip install vezzo
+```
+
+## Author
+Anders Goncalves da Silva (@andersgs)

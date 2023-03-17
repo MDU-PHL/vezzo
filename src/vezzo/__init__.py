@@ -148,4 +148,4 @@ def verify_from_config(config: pathlib.Path):
             tool["exit_code"],
         )
         result, obs_version = verify(tool["req_version"], version_string)
-        yield result, obs_version, tool["req_version"]
+        yield result, obs_version, tool["req_version"], tool["name"]

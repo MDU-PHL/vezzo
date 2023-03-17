@@ -1,0 +1,9 @@
+- name: blastn
+  req_version: ">=2.14.0"
+  version_flag: -version
+  exit_code: 0
+
+- name: samtools
+  req_version: ">=1.16.0"
+  version_flag: --version
+  exit_code: 0
